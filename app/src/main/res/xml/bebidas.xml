@@ -1,0 +1,15 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+<bebidas>
+    <producto><idpasillo>A</idpasillo><idproducto>001</idproducto><desc>Jumex Uva 1 lt</desc><precio> 27.50</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>002</idproducto><desc>Jumex Piña 1 lt</desc><precio> 27.50</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>003</idproducto><desc>Jumex Manzana 1 lt</desc><precio> 27.50</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>004</idproducto><desc>Coca Cola 3 lts</desc><precio> 32.50</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>005</idproducto><desc>Coca Cola Light 2.5 lts</desc><precio>29.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>006</idproducto><desc>Clamato 1 lt</desc><precio>38.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>007</idproducto><desc>Verduras V8 355 ml</desc><precio>9.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>008</idproducto><desc>Topo Chico Agua Mineral 1 lt</desc><precio>19.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>009</idproducto><desc>Bonafont Agua Purificada 1 tl</desc><precio>12.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>010</idproducto><desc>Cerveza TKT 6 pk</desc><precio>79.00</precio></producto>
+    <producto><idpasillo>A</idpasillo><idproducto>011</idproducto><desc>Cerveza TKT Light 6 pk</desc><precio>79.00</precio></producto>
+</bebidas>

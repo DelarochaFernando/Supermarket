@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Supermarket</string>
+    <array name="lista_productos">
+        <item>Beer</item>
+        <item>Manzanas</item>
+        <item>Croquetas para Perro</item>
+        <item>Revista</item>
+        <item>Papel Higienico</item>
+    </array>
+</resources>

@@ -1,0 +1,14 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<verduras xmlns:android="http://schemas.android.com/apk/res/android">
+    <producto><idpasillo>C</idpasillo><idproducto>001</idproducto><desc>Tomate Huaje 1kg</desc><precio>10.50</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>002</idproducto><desc>Cebolla Blanca 1kg</desc><precio>27.00</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>003</idproducto><desc>Chile Jalapeño 1kg</desc><precio>16.50</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>004</idproducto><desc>Papa Blanca 1kg</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>005</idproducto><desc>Zanahoria 1kg</desc><precio>18.90</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>006</idproducto><desc>Aguacate Hass 1kg</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>007</idproducto><desc>Cilantro (manojo)</desc><precio>10.00</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>008</idproducto><desc>Ápio 1kg</desc><precio>17.50</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>009</idproducto><desc>Calabacita 1kg</desc><precio>20.90</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>010</idproducto><desc>Chile Poblano 1g</desc><precio>16.00</precio></producto>
+    <producto><idpasillo>C</idpasillo><idproducto>011</idproducto><desc>Chayote 1g</desc><precio>16.00</precio></producto>
+</verduras>

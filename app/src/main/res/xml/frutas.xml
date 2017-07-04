@@ -1,0 +1,14 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<frutas xmlns:android="http://schemas.android.com/apk/res/android">
+    <producto><idpasillo>B</idpasillo><idproducto>001</idproducto><desc>Manzana Golden 1kg</desc><precio>37.50</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>002</idproducto><desc>Naranja Valencia 1kg</desc><precio>22.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>003</idproducto><desc>Mango Manila 1kg</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>004</idproducto><desc>Piña Rebanada 350g</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>005</idproducto><desc>Jicama 1kg</desc><precio>18.90</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>006</idproducto><desc>Durazno 1kg</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>007</idproducto><desc>Sandía 1kg</desc><precio>15.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>008</idproducto><desc>Melón 1kg</desc><precio>17.50</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>009</idproducto><desc>Papaya 1kg</desc><precio>17.50</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>010</idproducto><desc>Fresa 1g</desc><precio>45.00</precio></producto>
+    <producto><idpasillo>B</idpasillo><idproducto>011</idproducto><desc>Limón 1g</desc><precio>12.90</precio></producto>
+</frutas>

@@ -1,0 +1,14 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<cereales>
+    <producto><idpasillo>D</idpasillo><idproducto>001</idproducto><desc>Arroz 1 kg</desc><precio> 20.50</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>002</idproducto><desc>Arroz Integral 1 kg</desc><precio> 20.50</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>003</idproducto><desc>Frijol Peruano 1 kg</desc><precio> 22.50</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>004</idproducto><desc>Frijol Negro 1 kg</desc><precio> 22.50</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>005</idproducto><desc>Lenteja 1 kg</desc><precio>19.00</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>006</idproducto><desc>Garvanzo 1 kg</desc><precio>18.00</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>007</idproducto><desc>Maiz Pozolero 1kg</desc><precio>15.00</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>008</idproducto><desc>Elote desgranado lata 120g</desc><precio>19.00</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>009</idproducto><desc>Semilla de Calabaza 100g</desc><precio>12.00</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>010</idproducto><desc>Chicharo fresco lata 120g</desc><precio>19.50</precio></producto>
+    <producto><idpasillo>D</idpasillo><idproducto>011</idproducto><desc>Semilla de Girasol 100g</desc><precio>12.00</precio></producto>
+</cereales>
