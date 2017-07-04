@@ -182,6 +182,11 @@ public class Bebidas extends AppCompatActivity {
 
     }
 
+    private void dialogSubTotal(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.recycler_dialog_items);
+    }
+
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProdViewHolder>{
 
         //LayoutInflater inflater;
