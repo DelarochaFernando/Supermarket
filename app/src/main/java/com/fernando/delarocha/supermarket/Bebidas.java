@@ -160,6 +160,7 @@ public class Bebidas extends AppCompatActivity {
         boolean res = false;
         switch(item.getItemId()){
             case R.id.cart_toolbar:
+                dialogSubTotal();
                 res = true;
             break;
 
@@ -183,8 +184,16 @@ public class Bebidas extends AppCompatActivity {
     }
 
     private void dialogSubTotal(){
-        Dialog dialog = new Dialog(this);
-        dialog.setContentView(R.layout.recycler_dialog_items);
+
+        try{
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialogo_subtotal);
+            dialog.setCancelable(true);
+            dialog.show();
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProdViewHolder>{
