@@ -2,6 +2,7 @@ package com.fernando.delarocha.supermarket;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -24,13 +26,15 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static com.fernando.delarocha.supermarket.R.id.btnContinuarPago;
+
 public class Bebidas extends AppCompatActivity {
 
     private RecyclerView listaProductos;
     private String[] ArrayProductos, precios;
     private String[] pasillos;
     private ArrayList<Integer> images;
-    private ArrayList<Producto> listBebidas;
+    private ArrayList<Producto> listBebidas, prodSeleccionados;
     private ProductAdapter productAdapter;
     private DBAdapter dbAdapter;
     private Toolbar toolbar;
@@ -52,6 +56,7 @@ public class Bebidas extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tools = new Tools(this);
+        prodSeleccionados = new ArrayList<Producto>();
         Object preferenceNull = Integer.parseInt(tools.getStringPreference(tools.PRODS_SHOP_CART));
 
         if(preferenceNull == null){
@@ -159,6 +164,12 @@ public class Bebidas extends AppCompatActivity {
         //return super.onOptionsItemSelected(item);
         boolean res = false;
         switch(item.getItemId()){
+            case android.R.id.home:
+                Intent goPasillos = new Intent(Bebidas.this, Pasillos.class);
+                goPasillos.putExtra("prodSeleccionados", prodSeleccionados);
+                startActivity(goPasillos);
+                res = true;
+                break;
             case R.id.cart_toolbar:
                 dialogSubTotal();
                 res = true;
@@ -189,6 +200,7 @@ public class Bebidas extends AppCompatActivity {
             Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialogo_subtotal);
             dialog.setCancelable(true);
+
             dialog.show();
         }catch(Exception e) {
             e.printStackTrace();
@@ -223,7 +235,6 @@ public class Bebidas extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ProdViewHolder holder, int position) {
 
-            ArrayList<Producto> prodSeleccionados = new ArrayList<Producto>();
             int ultimaPos = 0;
             producto = pdtosArray.get(position);
             //String tag = "Producto: "+producto.getDesc()+"\n"+"Precio: "+producto.getPrecio()+"\n";
@@ -239,10 +250,12 @@ public class Bebidas extends AppCompatActivity {
                         checkBoxclicked++;
                         barTextCount.setText(String.valueOf(checkBoxclicked));
                         tools.setStringPreference(tools.PRODS_SHOP_CART, String.valueOf(checkBoxclicked));
+                        prodSeleccionados.add(producto);
                     }else{
                         checkBoxclicked--;
                         barTextCount.setText(String.valueOf(checkBoxclicked));
                         tools.setStringPreference(tools.PRODS_SHOP_CART, String.valueOf(checkBoxclicked));
+                        prodSeleccionados.remove(producto);
                     }
                 }
             });

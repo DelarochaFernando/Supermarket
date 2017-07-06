@@ -1,6 +1,7 @@
 package com.fernando.delarocha.supermarket;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -80,6 +82,42 @@ public class Pasillos extends AppCompatActivity {
         barTextCount = (TextView)rl.findViewById(R.id.count_textview);
         barTextCount.setText(String.valueOf(checkBoxclicked));
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //return super.onOptionsItemSelected(item);
+        boolean res = false;
+        switch(item.getItemId()){
+            case R.id.cart_toolbar:
+                dialogSubTotal();
+                res = true;
+                break;
+
+        }
+        return res;
+    }
+
+    private void dialogSubTotal(){
+
+        try{
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialogo_subtotal);
+            dialog.setCancelable(true);
+            TextView textViewTitulo = (TextView) dialog.findViewById(R.id.textViewTitulo);
+            RecyclerView recyclerDialog = (RecyclerView)dialog.findViewById(R.id.recyclerDialog);
+            Button btnContinuarPago = (Button)dialog.findViewById(R.id.btnContinuarPago);
+            btnContinuarPago.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+            dialog.show();
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public class pasilloAdapter extends RecyclerView.Adapter<pasilloAdapter.PasilloViewHolder>{
@@ -169,77 +207,21 @@ public class Pasillos extends AppCompatActivity {
             return ArrayPasillos.length;
         }
 
-    public class PasilloViewHolder extends RecyclerView.ViewHolder{
+        public class PasilloViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView letraPasillo;
-        private TextView descPasillo;
-        private LinearLayout linearPasillo;
+            private TextView letraPasillo;
+            private TextView descPasillo;
+            private LinearLayout linearPasillo;
 
-        public PasilloViewHolder(View itemView){
-            super(itemView);
-            linearPasillo = (LinearLayout)itemView.findViewById(R.id.linearPasillo);
-            letraPasillo = (TextView) itemView.findViewById(R.id.letraPasillo);
-            descPasillo = (TextView) itemView.findViewById(R.id.descPasillo);
+            public PasilloViewHolder(View itemView){
+                super(itemView);
+                linearPasillo = (LinearLayout)itemView.findViewById(R.id.linearPasillo);
+                letraPasillo = (TextView) itemView.findViewById(R.id.letraPasillo);
+                descPasillo = (TextView) itemView.findViewById(R.id.descPasillo);
 
-        }
-    }
-    }
-
-    /*public class Bebidas extends Producto{
-
-        public Bebidas(String idPas, String idPdto, String desc, String prec){
-            //prod = new Producto();
-            this.setIdPasillo(idPas);
-            this.setIdProducto(idPdto);
-            this.setDesc(desc);
-            this.setPrecio(prec);
-        }
-
-        public Bebidas(){
-
+            }
         }
     }
 
-    public class Frutas extends Producto{
-
-        public Frutas(String idPas, String idPdto, String desc, String prec){
-            this.setIdPasillo(idPas);
-            this.setIdProducto(idPdto);
-            this.setDesc(desc);
-            this.setPrecio(prec);
-        }
-
-        public Frutas(){
-
-        }
-    }
-
-    public class Verduras extends Producto{
-
-        public Verduras(String idPas, String idPdto, String desc, String prec){
-            this.setIdPasillo(idPas);
-            this.setIdProducto(idPdto);
-            this.setDesc(desc);
-            this.setPrecio(prec);
-        }
-
-        public Verduras(){
-
-        }
-    }
-
-    public class Cereales extends Producto{
-
-        public Cereales(String idPas, String idPdto, String desc, String prec){
-            this.setIdPasillo(idPas);
-            this.setIdProducto(idPdto);
-            this.setDesc(desc);
-            this.setPrecio(prec);
-        }
-
-        public Cereales(){
-
-        }
-    }*/
 
 }

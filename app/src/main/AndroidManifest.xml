@@ -46,6 +46,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pasillos" />
         </activity>
+        <activity android:name=".GranTotal"></activity>
     </application>
 
 </manifest>

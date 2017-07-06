@@ -1,5 +1,6 @@
 package com.fernando.delarocha.supermarket;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
@@ -80,6 +82,35 @@ public class Frutas extends AppCompatActivity {
         barTextCount = (TextView)rl.findViewById(R.id.count_textview);
         barTextCount.setText(String.valueOf(checkBoxclicked));
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        //return super.onOptionsItemSelected(item);
+        boolean res = false;
+        switch(item.getItemId()){
+            case R.id.cart_toolbar:
+                dialogSubTotal();
+                res = true;
+                break;
+        }
+        return res;
+    }
+
+    private void dialogSubTotal(){
+
+        try{
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialogo_subtotal);
+            dialog.setCancelable(true);
+            TextView textViewTitulo = (TextView) dialog.findViewById(R.id.textViewTitulo);
+            RecyclerView recyclerDialog = (RecyclerView)dialog.findViewById(R.id.recyclerDialog);
+            Button btnContinuarPago = (Button)dialog.findViewById(R.id.btnContinuarPago);
+            dialog.show();
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     public class FrutAdapter extends RecyclerView.Adapter<Frutas.FrutAdapter.ProdViewHolder>{
