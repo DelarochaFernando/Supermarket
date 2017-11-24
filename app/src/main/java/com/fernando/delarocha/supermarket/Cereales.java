@@ -33,8 +33,8 @@ public class Cereales extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cereales);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle("Pasillo C - CEREALES");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Pasillo A - BEBIDAS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         tools = new Tools(this);
         dbAdapter = new DBAdapter(this);

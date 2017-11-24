@@ -21,7 +21,7 @@ public class LaunchActivity extends AppCompatActivity {
 
     private long result;
     private DBAdapter dbAdapter;
-    private  ArrayList<Producto> ListProd;
+    private  ArrayList<Producto> ListProd, selectedProds;
     private Activity activity;
     private Toolbar toolbar;
     private Tools tools;
@@ -40,7 +40,9 @@ public class LaunchActivity extends AppCompatActivity {
         try {
             catalogsInserted = areCatalogsInserted();
             if(catalogsInserted){
+                selectedProds = new ArrayList<Producto>();
                 Intent intent = new Intent(LaunchActivity.this, Pasillos.class);
+                intent.putExtra("selectedProds", selectedProds);
                 startActivity(intent);
             }else{
                 tools.setStringPreference(tools.PRODS_SHOP_CART,"0");
@@ -93,6 +95,7 @@ public class LaunchActivity extends AppCompatActivity {
                     xmlIdList.add(R.xml.frutas);
                     xmlIdList.add(R.xml.verduras);
                     xmlIdList.add(R.xml.cereales);
+                    xmlIdList.add(R.xml.limpieza);
                     int listlentgth;
                     result = 0;
                     String eventName = "";

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<limpieza xmlns:android="http://schemas.android.com/apk/res/android">
+    <producto><idpasillo>E</idpasillo><idproducto>001</idproducto><desc>Limpiador Pinol 1 lt</desc><precio> 27.50</precio></producto>
+    <producto><idpasillo>E</idpasillo><idproducto>002</idproducto><desc>Fibra Scotch brite 1 pieza</desc><precio> 14.00</precio></producto>
+    <producto><idpasillo>E</idpasillo><idproducto>003</idproducto><desc>Cloralex 1 lt</desc><precio> 22.50</precio></producto>
+    <producto><idpasillo>E</idpasillo><idproducto>004</idproducto><desc>Detergente en Polvo ACE 1 Kg</desc><precio> 20.00</precio></producto>
+    <producto><idpasillo>E</idpasillo><idproducto>005</idproducto><desc>Jabón líquido Axión 500 ml</desc><precio>16.00</precio></producto>
+</limpieza>

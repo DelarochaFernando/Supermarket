@@ -30,7 +30,7 @@ import static com.fernando.delarocha.supermarket.R.id.btnContinuarPago;
 
 public class Bebidas extends AppCompatActivity {
 
-    private RecyclerView listaProductos;
+    private RecyclerView recyclerBebidas;
     private String[] ArrayProductos, precios;
     private String[] pasillos;
     private ArrayList<Integer> images;
@@ -51,10 +51,10 @@ public class Bebidas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bebidas);
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setTitle("Pasillo A - BEBIDAS");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Pasillo A - BEBIDAS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tools = new Tools(this);
         prodSeleccionados = new ArrayList<Producto>();
         Object preferenceNull = Integer.parseInt(tools.getStringPreference(tools.PRODS_SHOP_CART));
@@ -64,48 +64,19 @@ public class Bebidas extends AppCompatActivity {
         }else {
             checkBoxclicked = Integer.parseInt(tools.getStringPreference(tools.PRODS_SHOP_CART));
         }
-        //listaProductos = (ListView)findViewById(R.id.list_item);
-        listaProductos = (RecyclerView)findViewById(R.id.recycler);
-        listaProductos.setHasFixedSize(true);
+
+        recyclerBebidas = (RecyclerView)findViewById(R.id.recycler);
+        recyclerBebidas.setHasFixedSize(true);
         dbAdapter = new DBAdapter(this);
-        ArrayProductos = new String[]{"Cerveza","Pan","Huevos","Revista","Papel Higienico"};
+
         productos = new ArrayList<>();
-        precios = new String[]{"$25.00","$13.50","$25.50","$12.50","$35.00"};
-        pasillos = new String[]{"1","4","6","5","7"};
+        //precios = new String[]{"$25.00","$13.50","$25.50","$12.50","$35.00"};
+        //pasillos = new String[]{"1","4","6","5","7"};
         barTextCount = new TextView(this);
-        ctx = getApplicationContext();
-
-
-        images = new ArrayList<>();
-        images.add(R.drawable.beer);
-        images.add(R.drawable.bread);
-        images.add(R.drawable.eggs);
-        images.add(R.drawable.magazine);
-        images.add(R.drawable.paper);
-
-        /*for(int i = 0; i< ArrayProductos.length; i++){
-
-            int idResImg = images.get(i);
-
-            Log.i("image","index: "+i+" - "+String.valueOf(idResImg));
-            //imgProd.setImageResource(idimg);
-            imgBm = BitmapFactory.decodeResource(getResources(),idResImg);
-
-            String desc = ArrayProductos[i];
-            String price = precios[i];
-            String idProd = "";
-            String idPasillo = pasillos[i];
-
-
-            producto = new Producto(idProd,desc,price,idPasillo);
-            productos.add(i,producto);
-        }*/
-        productos = getBebidasFromDB("A");
-
-        productAdapter = new ProductAdapter(ctx,productos);
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,ArrayProductos);
-        listaProductos.setAdapter(productAdapter);
-        listaProductos.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        listBebidas = getBebidasFromDB("A");
+        productAdapter = new ProductAdapter(listBebidas);
+        recyclerBebidas.setAdapter(productAdapter);
+        recyclerBebidas.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         /*listaProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -166,6 +137,7 @@ public class Bebidas extends AppCompatActivity {
         switch(item.getItemId()){
             case android.R.id.home:
                 Intent goPasillos = new Intent(Bebidas.this, Pasillos.class);
+                //update selected products extras and send back to Pasillos.
                 goPasillos.putExtra("prodSeleccionados", prodSeleccionados);
                 startActivity(goPasillos);
                 res = true;
@@ -216,7 +188,7 @@ public class Bebidas extends AppCompatActivity {
         private Producto ptoSelect;
 
 
-        public ProductAdapter(Context ctx, ArrayList<Producto> pdtos){
+        public ProductAdapter(ArrayList<Producto> pdtos){
             //super(ctx,R.layout.item_info, pdtos);
             //inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             this.pdtosArray = pdtos;
@@ -291,18 +263,6 @@ public class Bebidas extends AppCompatActivity {
                 thirdline = (TextView)itemView.findViewById(R.id.ThirdLine);
                 checkSelect = (CheckBox)itemView.findViewById(R.id.checkSelect);
             }
-           /*public void onCheckboxClicked(View view){
-                boolean checked = ((CheckBox)view).isChecked();
-                switch (view.getId()){
-                    case R.id.checkSelect:
-                        if(checked){
-                            checkBoxclicked++;
-                        }else{
-                            checkBoxclicked--;
-                        }
-                        break;
-                }
-            }*/
         }
     }
 }

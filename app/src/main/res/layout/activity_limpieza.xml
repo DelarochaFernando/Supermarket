@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.fernando.delarocha.supermarket.Bebidas">
+    tools:context="com.fernando.delarocha.supermarket.Frutas">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:theme="@style/bebidasTheme"
-        app:popupTheme="@style/bebidasTheme"/>
+        android:theme="@style/limpiezaTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recyclerLimp"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <!--<ListView
-        android:id="@+id/list_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>-->
+        android:layout_height="match_parent"/>
 </RelativeLayout>

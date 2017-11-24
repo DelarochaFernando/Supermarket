@@ -46,7 +46,12 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Pasillos" />
         </activity>
-        <activity android:name=".GranTotal"></activity>
+        <activity android:name=".GranTotal" />
+        <activity android:name=".Limpieza">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Pasillos" />
+        </activity>
     </application>
 
 </manifest>

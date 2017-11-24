@@ -38,15 +38,15 @@ public class Pasillos extends AppCompatActivity {
 
     RecyclerView recyclerPasillo;
     String[] ArrayPasillos, tituloPasillo;
-    ArrayList<Producto> ListProd;
+    ArrayList<Producto> ListProd, selectedProds;
     private Toolbar toolbar;
     private Tools tools;
     private TextView barTextCount;
     long result;
     private int checkBoxclicked;
     DBAdapter dbAdapter;
-    XmlResourceParser parser;
-    private XmlPullParserFactory xmlFactoryObject;
+    //XmlResourceParser parser;
+    //private XmlPullParserFactory xmlFactoryObject;
     //Producto producto;
 
 
@@ -57,6 +57,10 @@ public class Pasillos extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("SuperMarket");
+
+        //receive extras from LaunchActivity.java
+        Bundle extras = getIntent().getExtras();
+        //selectedProds = (ArrayList<Producto>) extras.getParcelableArrayList("selectedProds");
 
         dbAdapter = new DBAdapter(this);
         tools = new Tools(this);
@@ -170,12 +174,15 @@ public class Pasillos extends AppCompatActivity {
                     holder.descPasillo.setTextColor(Color.MAGENTA);
                     break;
             }
+
             holder.linearPasillo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     switch(position){
                         case 0:
                             Intent goPasilloA = new Intent(Pasillos.this,Bebidas.class);
+                            //send extras that contain selected products to every activity.
                             startActivity(goPasilloA);
                             break;
                         case 1:
@@ -189,6 +196,10 @@ public class Pasillos extends AppCompatActivity {
                         case 3:
                             Intent goPasilloD = new Intent(Pasillos.this, Cereales.class);
                             startActivity(goPasilloD);
+                            break;
+                        case 4:
+                            Intent goPasilloE = new Intent(Pasillos.this, Limpieza.class);
+                            startActivity(goPasilloE);
                             break;
                     }
                 }
